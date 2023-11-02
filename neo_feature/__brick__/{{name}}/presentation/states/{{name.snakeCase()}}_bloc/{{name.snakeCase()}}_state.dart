@@ -1,11 +1,11 @@
-part of '{{name.snakeCase()}}_cubit.dart';
+part of '{{name.snakeCase()}}_bloc.dart';
 
 @freezed
 class {{name.pascalCase()}}State with _${{name.pascalCase()}}State {
   const factory {{name.pascalCase()}}State.initial({
     @Default(FetchStatus.pure) FetchStatus status,
     String? error,
-    {{name.pascalCase()}}Model? {{name.camelCase()}},
+    {{name.pascalCase()}}Model? registration,
   }) = _{{name.pascalCase()}}InitialState;
 
   factory {{name.pascalCase()}}State.fromJson(Object? json) =>
