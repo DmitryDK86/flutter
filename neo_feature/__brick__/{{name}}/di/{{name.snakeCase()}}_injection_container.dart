@@ -33,6 +33,6 @@ class {{name.pascalCase()}}Injection extends ICoreInjection {
 
   @override
  Future<void> initState({{#useFlavor}}EnvConfig env,{{/useFlavor}} {bool useMock = false}) async {
-    sl.registerFactory(() => {{name.pascalCase()}}Cubit(repository: sl()));
+    sl.registerFactory(() => {{name.pascalCase()}}Bloc(repository: sl()));
   }
 }

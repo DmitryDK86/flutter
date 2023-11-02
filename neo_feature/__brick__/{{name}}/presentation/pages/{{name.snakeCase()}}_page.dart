@@ -8,7 +8,8 @@ class {{name.pascalCase()}}Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => {{name.pascalCase()}}Injection.sl<{{name.pascalCase()}}Bloc>()..init(),
+      create: (context) => {{name.pascalCase()}}Injection.sl<{{name.pascalCase()}}Bloc>()
+            ..add(const {{name.pascalCase()}}Event.init()),
       child: Scaffold(
         appBar: AppBar(title: const Text('{{name.pascalCase()}} page')),
         body: BlocBuilder<{{name.pascalCase()}}Bloc, {{name.pascalCase()}}State>(
