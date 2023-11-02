@@ -4,7 +4,7 @@ import '../../_{{name.snakeCase()}}.dart';
 
 List<RouteBase> {{name.camelCase()}}Routes = [
   GoRoute(
-    path: RoutePath.{{name.pascalCase()}},
+    path: RoutePath.{{name.camelCase()}},
     builder: (context, state) => const {{name.pascalCase()}}Page(),
   ),
 ];
