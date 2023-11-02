@@ -1,19 +1,17 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../_{{name.snakeCase()}}.dart';
 
-@RoutePage()
 class {{name.pascalCase()}}Page extends StatelessWidget {
   const {{name.pascalCase()}}Page({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => {{name.pascalCase()}}Injection.sl<{{name.pascalCase()}}Cubit>()..init(),
+      create: (context) => {{name.pascalCase()}}Injection.sl<{{name.pascalCase()}}Bloc>()..init(),
       child: Scaffold(
         appBar: AppBar(title: const Text('{{name.pascalCase()}} page')),
-        body: BlocBuilder<{{name.pascalCase()}}Cubit, {{name.pascalCase()}}State>(
+        body: BlocBuilder<{{name.pascalCase()}}Bloc, {{name.pascalCase()}}State>(
           builder: (context, state) {
             if (state.status.isFetchingInProgress) {
               return const Center(child: CircularProgressIndicator());
@@ -24,6 +22,16 @@ class {{name.pascalCase()}}Page extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(state.error ?? '')
+                  ],
+                ),
+              );
+            }
+
+            if (state.status.isFetchingSuccess) {
+              return Center(
+                child: Column(
+                  children: [
+                    Text('isFetchingSuccess'),
                   ],
                 ),
               );
